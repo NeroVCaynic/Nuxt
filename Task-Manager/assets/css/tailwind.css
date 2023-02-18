@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-neutral-100 dark:bg-neutral-800 transition-colors
+}
+
+body * {
+    font-family: "Poppins";
+}
+
+.head-text, .task .icons {
+    display: inline-block;
+}
+
+.task .icons {
+    text-align: right;
+}
+
+.task i {
+    font-size: 1.8rem;
+    margin-left: 6px;
+    cursor: pointer;
+    @apply text-gray-300
+}
+
+.task i.active {
+    @apply text-red-500
+}
+
+.task i.delete:hover {
+    @apply text-gray-500
+}
+
+@layer components {
+    .task {
+        @apply bg-white dark:bg-neutral-700 dark:text-white rounded-md border-2 border-l-4 border-green-500 shadow-lg mt-5 px-[6px] py-5 flex justify-between items-center
+    }
+    .task:hover {
+        @apply border-l-8 border-green-400 ease-in-out transition-all
+    }
+    .task-list {
+        max-width: 640px;
+        margin: 20px auto;
+    }
+    .btn {
+        @apply w-32 py-1 shadow-md border-2 border-green-300 hover:bg-green-200 rounded-sm bg-slate-100
+    }
+}
